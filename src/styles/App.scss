@@ -13,7 +13,7 @@ html,body{
   background-color: #222;
 }
 
-.content{
+#app{
   @include dis_whole;
 }
 
@@ -47,6 +47,10 @@ html,body{
       transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
       &.is-inverse{
         transform: translate(320px) rotateY(180deg);
+      }
+      img{
+          width: 240px;
+          height: 240px;
       }
     }
 
@@ -85,3 +89,54 @@ html,body{
   }
 }
 /* image end */
+
+/* controller start */
+.controller-nav{
+  position: absolute;
+  left:0;
+  bottom:30px;
+  z-index: 101;
+  width: 100%;
+  text-align: center;
+
+  @at-root{
+    .controller-unit {
+      display: inline-block;
+      margin: 0 5px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      vertical-align: middle;
+
+      cursor: pointer;
+      background-color: #aaa;
+      border-radius: 50%;
+      transform: scale(.5);
+
+      transition: transform .6s ease-in-out,background-color .3s;
+
+      &.is-center {
+        transform: scale(1);
+        background-color: #888;
+
+        &::after{
+          color:#fff;
+          font-family: "icons-turn-arrow";
+          content:"\e600";
+          line-height: 30px;
+          font-size: 80%;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        &.is-inverse{
+          background-color: #555;
+          transform: rotateY(180deg);
+        }
+      }
+
+    }
+
+  }
+}
+/* controller end */
