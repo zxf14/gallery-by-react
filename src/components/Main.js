@@ -162,7 +162,7 @@ class AppComponent extends React.Component {
 
     //获取舞台的大小
     let stageDOM = ReactDOM.findDOMNode(this.refs.stage),
-        stageW=stageDOM.scrollWidth,
+        stageW=this.refs.stage.scrollWidth,
         stageH=stageDOM.scrollHeight,
         halfStageW=Math.floor(stageW/2),
         halfStageH=Math.floor(stageH/2);
@@ -203,6 +203,7 @@ class AppComponent extends React.Component {
 
   render() {
     let controllerUnits=[],imgFigures=[];
+
     imageDatas.forEach((value,index) =>{
       if(!this.state.imgsArrangeArr[index]){
         this.state.imgsArrangeArr[index]={
